@@ -92,8 +92,9 @@ export const renderTimeGridWeekSlotLabelContent = (
 export const renderTimeGridWeekEventContent = (
   renderProps: EventContentArg
 ) => {
-  const start = dayjs(renderProps.event.extendedProps.originalStartDate);
-  const end = dayjs(renderProps.event.extendedProps.originalEndDate);
+  const event = renderProps.event;
+  const start = dayjs(event.extendedProps.originalStartDate);
+  const end = dayjs(event.extendedProps.originalEndDate);
   const diffInMinutes = end.diff(start, "minute");
 
   const haveLessTime = diffInMinutes < 30;
@@ -102,12 +103,13 @@ export const renderTimeGridWeekEventContent = (
   return (
     <div
       className={cn("px-1.5 py-0.5 flex flex-col truncate", {
-        "flex-row text-xs gap-1": diffInMinutes < 40,
-        "flex-row px-1 py-1 text-[11px] leading-0": haveLessTime,
+        "flex-row text-xs gap-1": !event.allDay && diffInMinutes < 40,
+        "flex-row px-1 py-1 text-[11px] leading-0":
+          !event.allDay && haveLessTime,
       })}
     >
-      <span>{renderProps.event.title}</span>
-      <span>{timeString}</span>
+      <span>{event.title}</span>
+      {!event.allDay && <span>{timeString}</span>}
     </div>
   );
 };
@@ -161,8 +163,9 @@ export const renderTimeGridDaySlotLabelContent = (
 };
 
 export const renderTimeGridDayEventContent = (renderProps: EventContentArg) => {
-  const start = dayjs(renderProps.event.extendedProps.originalStartDate);
-  const end = dayjs(renderProps.event.extendedProps.originalEndDate);
+  const event = renderProps.event;
+  const start = dayjs(event.extendedProps.originalStartDate);
+  const end = dayjs(event.extendedProps.originalEndDate);
   const diffInMinutes = end.diff(start, "minute");
   const haveLessTime = diffInMinutes < 30;
   const timeString = `${start.format("MMM D, h:mm A")} - ${end.format(
@@ -172,12 +175,13 @@ export const renderTimeGridDayEventContent = (renderProps: EventContentArg) => {
   return (
     <div
       className={cn("px-1.5 py-0.5 flex flex-col truncate", {
-        "flex-row text-xs gap-1": diffInMinutes < 40,
-        "flex-row px-1 py-1 text-[11px] leading-0": haveLessTime,
+        "flex-row text-xs gap-1": !event.allDay && diffInMinutes < 40,
+        "flex-row px-1 py-1 text-[11px] leading-0":
+          !event.allDay && haveLessTime,
       })}
     >
-      <span>{renderProps.event.title}</span>
-      <span>{timeString}</span>
+      <span>{event.title}</span>
+      {!event.allDay && <span>{timeString}</span>}
     </div>
   );
 };

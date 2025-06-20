@@ -31,7 +31,7 @@ export const createEventFormSchema = z
       .second(0)
       .millisecond(0);
 
-    if (!end.isAfter(start)) {
+    if (end.isBefore(start)) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         message: "End date/time must be after start date/time",

@@ -71,10 +71,12 @@ export const useCreateEventForm = (calendarRef: RefObject<FullCalendar>) => {
       const start = combineDateAndTime(data.startDate, data.startTime);
       const end = combineDateAndTime(data.endDate, data.endTime);
 
+      const isSameDateTime = dayjs(start).isSame(end);
       const isMultiDay =
         !dayjs(start).isSame(end, "day") &&
         dayjs(end).diff(start, "minute") >= 1440;
-      const isAllDay = !data.startTime || !data.endTime || isMultiDay;
+      const isAllDay =
+        !data.startTime || !data.endTime || isMultiDay || isSameDateTime;
       const adjustedEnd = isAllDay ? dayjs(end).add(1, "day").toDate() : end;
 
       const newEvent: CalendarEvent = {
