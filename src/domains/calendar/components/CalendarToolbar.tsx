@@ -28,8 +28,8 @@ export const CalendarToolbar = forwardRef<
   );
 
   return (
-    <div className="flex items-center justify-between w-full py-3 px-4">
-      <div className="flex items-center gap-3">
+    <div className="flex items-center justify-between w-full py-3 px-4 max-sm:flex-col max-sm:gap-2 max-sm:items-start">
+      <div className="flex items-center gap-3 max-sm:w-full">
         <Button variant="outline" onClick={() => handleNavigate("today")}>
           Today
         </Button>
@@ -54,7 +54,7 @@ export const CalendarToolbar = forwardRef<
           </Button>
         </div>
 
-        <span className="font-medium text-gray-800 dark:text-gray-100 text-lg">
+        <span className="font-medium text-gray-800 dark:text-gray-100 text-lg max-sm:text-base max-sm:flex-grow max-sm:text-end">
           {getToolbarDateLabel(
             currentView,
             currentViewDateRange.start,
@@ -63,7 +63,7 @@ export const CalendarToolbar = forwardRef<
         </span>
       </div>
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 max-sm:w-full max-sm:grid max-sm:grid-cols-2">
         <Button onClick={() => openCreateEventDialog()}>Create Event</Button>
 
         <Select
@@ -72,7 +72,7 @@ export const CalendarToolbar = forwardRef<
           }
           value={currentView}
         >
-          <SelectTrigger className="w-32 cursor-pointer hover:bg-gray-50 hover:border-gray-200 bg-white rounded-full text-center pl-4">
+          <SelectTrigger className="w-32 cursor-pointer hover:bg-gray-50 hover:border-gray-200 bg-white rounded-full text-center pl-4 max-sm:w-full">
             <SelectValue placeholder="Theme" />
           </SelectTrigger>
           <SelectContent onCloseAutoFocus={(e) => e.preventDefault()}>

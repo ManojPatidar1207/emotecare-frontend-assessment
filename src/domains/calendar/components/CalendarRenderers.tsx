@@ -65,7 +65,7 @@ export const renderTimeGridWeekDayHeaderContent = (
       </span>
       <span
         className={cn(
-          "h-11 w-11 flex items-center justify-center text-2xl font-normal text-gray-800",
+          "h-11 w-11 flex items-center justify-center text-2xl font-normal text-gray-800 max-sm:h-8 max-sm:w-8 max-sm:text-base max-md:h-9 max-md:w-9 max-md:text-lg",
           { "text-white bg-blue-600 rounded-full": isToday }
         )}
       >
@@ -102,8 +102,8 @@ export const renderTimeGridWeekEventContent = (
   return (
     <div
       className={cn("px-1.5 py-0.5 flex flex-col truncate", {
+        "flex-row text-xs gap-1": diffInMinutes < 40,
         "flex-row px-1 py-1 text-[11px] leading-0": haveLessTime,
-        "flex-row text-xs": diffInMinutes < 40,
       })}
     >
       <span>{renderProps.event.title}</span>
@@ -136,7 +136,7 @@ export const renderTimeGridDayDayHeaderContent = (
       </span>
       <span
         className={cn(
-          "h-11 w-11 flex items-center justify-center text-2xl font-normal text-gray-800",
+          "h-11 w-11 flex items-center justify-center text-2xl font-normal text-gray-800 max-sm:h-8 max-sm:w-8 max-sm:text-base max-md:h-9 max-md:w-9 max-md:text-lg",
           { "text-white bg-blue-600 rounded-full": isToday }
         )}
       >
@@ -172,8 +172,8 @@ export const renderTimeGridDayEventContent = (renderProps: EventContentArg) => {
   return (
     <div
       className={cn("px-1.5 py-0.5 flex flex-col truncate", {
+        "flex-row text-xs gap-1": diffInMinutes < 40,
         "flex-row px-1 py-1 text-[11px] leading-0": haveLessTime,
-        "flex-row text-xs": diffInMinutes < 40,
       })}
     >
       <span>{renderProps.event.title}</span>
