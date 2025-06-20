@@ -3,6 +3,7 @@ import type FullCalendar from "@fullcalendar/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
+import { toast } from "sonner";
 
 import { useCalendarStore } from "@/domains/calendar/store";
 import { combineDateAndTime } from "@/domains/calendar/utils";
@@ -91,6 +92,8 @@ export const useCreateEventForm = (calendarRef: RefObject<FullCalendar>) => {
 
       addEvent(newEvent);
       closeCreateEventDialog();
+
+      toast.success("Event has been created.");
 
       calendarRef.current?.getApi().gotoDate(start);
     },
