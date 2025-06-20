@@ -2,6 +2,11 @@
 
 A single-page responsive calendar application built with modern React tooling.
 
+Here is the demo links:
+
+- [Part 1](https://drive.google.com/file/d/1mEApUdYldEXv6odzSHJxY0zeykiMslrH/view?usp=drive_link)
+- [Part 2](https://drive.google.com/file/d/1U9wTO8Pip6uGl0DsWoibOUxt_0MHugD0/view?usp=drive_link)
+
 ---
 
 ## Setup & Installation.
