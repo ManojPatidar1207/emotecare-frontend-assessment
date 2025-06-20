@@ -51,11 +51,16 @@ export const FloatingEventPopover = () => {
 
                   <div className="mt-1 text-xs text-gray-600">
                     {dayjs(event.extendedProps.originalStartDate).format(
-                      "ddd, MMM D, h:mm A "
+                      event.allDay ? "ddd, MMMM D" : "ddd, MMM D, h:mm A "
                     )}
-                    -
-                    {dayjs(event.extendedProps.originalEndDate).format(
-                      " ddd, MMM D, h:mm A"
+
+                    {!event.allDay && (
+                      <>
+                        -
+                        {dayjs(event.extendedProps.originalEndDate).format(
+                          " ddd, MMM D, h:mm A"
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
