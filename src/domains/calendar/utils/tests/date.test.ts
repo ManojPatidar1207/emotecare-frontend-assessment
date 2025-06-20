@@ -2,8 +2,6 @@ import { getGmtTime, combineDateAndTime } from "@/domains/calendar/utils/date";
 
 describe("getGmtTime", () => {
   it("returns GMT offset in correct format", () => {
-    // This test is timezone-dependent, so you may want to mock dayjs().utcOffset()
-    // For demonstration, just check the format:
     const result = getGmtTime();
     expect(result).toMatch(/^GMT [+-]\d{2}:\d{2}$/);
   });

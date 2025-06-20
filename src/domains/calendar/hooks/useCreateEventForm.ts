@@ -42,8 +42,6 @@ export const useCreateEventForm = (calendarRef: RefObject<FullCalendar>) => {
     },
   });
 
-  console.log("===========formState", errors);
-
   useEffect(() => {
     reset({
       title: initialData?.title || "",
