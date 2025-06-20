@@ -179,6 +179,10 @@ Some features are simplified or limited for this timed-box assessment
 
 - When we have more events in a day, then it shows "more" button and when we click on this button, it shows all events in the popup. Now when we click on some event from popup and click anywhere in the UI, it will close more events popup. (This can be fixed by implementing custom more event popup).
 
+### Create all day event
+
+- To create all day event, please select 00:00 time for both start and end time and make sure start and end date are same in the input.
+
 ## Bonus Features Implemented
 
 - Basic Accessibility (WCAG AA)
