@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "Team Sync",
+    "startDate": "2025-06-18T10:00:00",
+    "endDate": "2025-06-18T11:00:00",
+    "description": "Weekly team stand-up meeting",
+    "isAllDay": false
+  },
+  {
+    "id": "2",
+    "title": "Project Kickoff",
+    "startDate": "2025-06-19T09:00:00",
+    "endDate": "2025-06-19T12:00:00",
+    "description": "Kickoff meeting for the new project",
+    "isAllDay": false
+  },
+  {
+    "id": "3",
+    "title": "Independence Day",
+    "startDate": "2025-07-04",
+    "endDate": "2025-07-04",
+    "description": "National holiday",
+    "isAllDay": true
+  },
+  {
+    "id": "4",
+    "title": "Design Review",
+    "startDate": "2025-06-20T14:00:00",
+    "endDate": "2025-06-20T15:30:00",
+    "description": "Review the new UI design with stakeholders",
+    "isAllDay": false
+  }
+]
