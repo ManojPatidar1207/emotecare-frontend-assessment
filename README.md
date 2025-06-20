@@ -1,6 +1,6 @@
 # emote Care Front-End Engineer Assessment
 
-A single-page calendar application built with modern React tooling.
+A single-page responsive calendar application built with modern React tooling.
 
 ---
 
@@ -170,9 +170,7 @@ App (root)
 
 Some features are simplified or limited for this timed-box assessment
 
-### Responsiveness
-
-- The project is optimized for PC/laptop use. While it’s partially responsive, it does not provide full mobile support, and the UI may break or feel limited on smaller devices.
+### UI/UX Behaviour
 
 - When we have more events in a day, then it shows "more" button and when we click on this button, it shows all events in the popup. Now when we click on some event from popup and click anywhere in the UI, it will close more events popup. (This can be fixed by implementing custom more event popup).
 
@@ -180,6 +178,10 @@ Some features are simplified or limited for this timed-box assessment
 
 - Basic Accessibility (WCAG AA)
 
+- Responsive for both mobile and desktop devices
+
 - Unit Tests for some components and utils
 
 - React Query used for mock JSON fetching
+
+- Show toast on event creation
