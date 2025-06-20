@@ -49,7 +49,13 @@ Please follow below steps to setup and run on local machine:
 
 4. Open your browser and go to `http://localhost:5173`
 
-You’re all set — the calendar interface should be visible in your browser.
+> You’re all set — the calendar interface should be visible in your browser.
+
+5. Run the test cases:
+
+   ```bash
+   pnpm test
+   ```
 
 ---
 
