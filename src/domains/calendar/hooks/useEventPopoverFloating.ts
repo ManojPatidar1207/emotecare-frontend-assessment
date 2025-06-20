@@ -28,8 +28,6 @@ export const useEventPopoverFloating = () => {
     ],
   });
 
-  console.log("strategy", strategy);
-
   useOutsideClick(refs.floating, clearSelectedEvent);
 
   useEffect(() => {
